@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Nama dan NIM</title>
+</head>
+<body>
+    <h2>Form Data Mahasiswa</h2>
+
+    <form>
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" readonly>
+        <br><br>
+
+        <label for="nim">NIM:</label>
+        <input type="text" id="nim" readonly>
+    </form>
+
+    <script>
+        let nama = prompt("Masukkan nama Anda:");
+        let nim = prompt("Masukkan NIM Anda:");
+
+        document.getElementById("nama").value = nama || "";
+        document.getElementById("nim").value = nim || "";
+    </script>
+</body>
+</html>
