@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Modul 6 WEBPRO</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #2459a9;
+        }
+
+        section {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #kotak {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>TP MODUL 6 WEBPRO</h1>
+    <p>Tugas Pendahuluan Modul 6 – JavaScript dan jQuery</p>
+    <p>Nama: Nusaibah Shobrina<br>
+       NIM: 103092400027<br>
+       Kelas: IT-07-01</p>
+
+    <section>
+        <h2>A. Jawaban Teori</h2>
+
+        <h3>1. Pengertian dan Kegunaan JavaScript</h3>
+        <p>JavaScript adalah bahasa pemrograman yang digunakan untuk
+        membuat website menjadi interaktif, seperti menampilkan pesan,
+        menerima input pengguna, dan mengubah tampilan halaman.</p>
+
+        <h3>2. Pengertian dan Kegunaan jQuery</h3>
+        <p>jQuery adalah library JavaScript yang mempermudah pengaturan
+        elemen HTML, penanganan klik tombol, dan perubahan tampilan website.</p>
+
+        <h3>3. Perbedaan JavaScript dan jQuery</h3>
+        <p>JavaScript adalah bahasa pemrograman, sedangkan jQuery adalah
+        library berbasis JavaScript yang mempermudah penulisan kode
+        untuk memanipulasi elemen HTML dan menangani interaksi pengguna.</p>
+    </section>
+
+    <section>
+        <h2>B. Praktik JavaScript dan jQuery</h2>
+
+        <h3>4. Form Nama dan NIM</h3>
+        <button id="inputData">Masukkan Nama dan NIM</button>
+        <br>
+        <label>Nama:</label>
+        <input type="text" id="nama" readonly>
+        <br>
+        <label>NIM:</label>
+        <input type="text" id="nim" readonly>
+
+        <hr>
+
+        <h3>5. Interaksi Warna dengan jQuery</h3>
+        <button id="ungu">Ungu</button>
+        <button id="biru">Biru</button>
+        <button id="hijau">Hijau</button>
+
+        <div id="kotak"></div>
+
+        <button id="sembunyikan">Sembunyikan warna</button>
+        <button id="tampilkan">Tampilkan warna</button>
+    </section>
+
+    <script>
+        document.getElementById("inputData").onclick = function () {
+            let nama = prompt("Masukkan nama Anda:");
+            if (nama === null) return;
+
+            let nim = prompt("Masukkan NIM Anda:");
+            if (nim === null) return;
+
+            document.getElementById("nama").value = nama;
+            document.getElementById("nim").value = nim;
+        };
+
+        $(document).ready(function () {
+            $("#ungu").click(function () {
+                $("#kotak").css("background-color", "purple");
+            });
+
+            $("#biru").click(function () {
+                $("#kotak").css("background-color", "blue");
+            });
+
+            $("#hijau").click(function () {
+                $("#kotak").css("background-color", "green");
+            });
+
+            $("#sembunyikan").click(function () {
+                $("#kotak").hide();
+            });
+
+            $("#tampilkan").click(function () {
+                $("#kotak").show();
+            });
+        });
+    </script>
+
+</body>
+</html>
